@@ -52,6 +52,21 @@ init_tmux_mode_indicator() {
 
   local -r status_right_value="$(tmux_option "status-right")"
   tmux set-option -gq "status-right" "${status_right_value/$mode_indicator_placeholder/$mode_indicator}"
+
+  local -r status_value_0="$(tmux_option "status-format[0]")"
+  tmux set-option -gq "status-format[0]" "${status_value_0/$mode_indicator_placeholder/$mode_indicator}"
+
+  local -r status_value_1="$(tmux_option "status-format[1]")"
+  tmux set-option -gq "status-format[1]" "${status_value_1/$mode_indicator_placeholder/$mode_indicator}"
+
+  local -r status_value_2="$(tmux_option "status-format[2]")"
+  tmux set-option -gq "status-format[2]" "${status_value_2/$mode_indicator_placeholder/$mode_indicator}"
+
+  local -r status_value_3="$(tmux_option "status-format[3]")"
+  tmux set-option -gq "status-format[3]" "${status_value_3/$mode_indicator_placeholder/$mode_indicator}"
+
+  local -r status_value_4="$(tmux_option "status-format[4]")"
+  tmux set-option -gq "status-format[4]" "${status_value_4/$mode_indicator_placeholder/$mode_indicator}"
 }
 
 init_tmux_mode_indicator
